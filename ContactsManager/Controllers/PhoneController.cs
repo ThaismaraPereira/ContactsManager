@@ -58,7 +58,7 @@ namespace ContactsManager.Controllers
                 return BadRequest(new { Message = "Erro de validação", Errors = errors });
             }
             PhoneModel phone = await _phoneRepository.AddPhone(phoneModel);
-            return CreatedAtAction(nameof(GetPhoneById), new { id = phone.PhoneId }, phone);
+            return CreatedAtAction(nameof(GetPhoneById), new { PhoneId = phone.PhoneId }, phone);
         }
 
         [HttpPut("{PhoneId}")]

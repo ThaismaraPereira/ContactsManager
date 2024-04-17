@@ -58,7 +58,7 @@ namespace ContactsManager.Controllers
                 return BadRequest(new { Message = "Erro de validação", Errors = errors });
             }
             EmailModel email = await _emailRepository.AddEmail(emailModel);
-            return CreatedAtAction(nameof(GetEmailById), new { id = email.EmailId }, email);
+            return CreatedAtAction(nameof(GetEmailById), new { EmailId = email.EmailId }, email);
         }
 
         [HttpPut("{EmailId}")]
